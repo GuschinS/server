@@ -1,3 +1,4 @@
+const port = process.env.PORT || 3000;
 const http = require('http');
 const fs = require('fs');
 
@@ -46,55 +47,7 @@ const server = http.createServer((req, res) => {
     }
 });
 
-const PORT = 3000;
-
-server.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+server.listen(port, () => {
+    console.log(`Server running on port ${port}`);
 });
 
-// const express = require('express');
-// const fs = require('fs');
-// const app = express();
-// const bodyParser = require('body-parser');
-//
-// app.use(bodyParser.json())
-//
-// app.post('/', (req, res) => {
-//     let jsonData = [];
-//
-//     fs.readFile('data.json', 'utf8', (err, data) => {
-//         if (err) {
-//             console.error(err);
-//             res.status(500).send('Error reading file');
-//         } else {
-//             try {
-//                 jsonData = JSON.parse(data);
-//                 console.log('jsonData :', jsonData)
-//             } catch (parseError) {
-//                 console.error(parseError);
-//             }
-//
-//             const newData = req.body;
-//             console.log('req.body: ', req.body)
-//             if (newData) {
-//                 jsonData.push(newData);
-//
-//                 // Запись новых данных в файл data.json
-//                 fs.writeFile('data.json', JSON.stringify(jsonData), 'utf8', (writeErr) => {
-//                     if (writeErr) {
-//                         console.error(writeErr);
-//                         res.status(500).send('Error writing to file');
-//                     } else {
-//                         res.status(200).send('Data added to file');
-//                     }
-//                 });
-//             } else {
-//                 res.status(400).send('No data received');
-//             }
-//         }
-//     });
-// });
-//
-// app.listen(3000, () => {
-//     console.log('Server is running on port 3000');
-// });
