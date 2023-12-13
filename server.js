@@ -31,7 +31,7 @@ const server = http.createServer((req, res) => {
                             return;
                         }
 
-                        res.writeHead(200, { 'Content-Type': 'application/json' });
+                        res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
                         res.end(JSON.stringify({ message: 'Data added successfully' }));
                     });
                 });
