@@ -41,6 +41,9 @@ const server = http.createServer((req, res) => {
                 return;
             }
         });
+    } else if (req.method === 'GET' && req.url === '/') {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end('<h1>Server is running successfully!</h1>');
     } else {
         res.writeHead(404, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ error: 'Not Found' }));
@@ -49,5 +52,25 @@ const server = http.createServer((req, res) => {
 
 server.listen(port, () => {
     console.log(`Server running on port ${port}`);
+    const successMessage = `
+        <html>
+        <head><title>Server Running</title></head>
+        <body>
+            <h1>Server is running successfully!</h1>
+            <p>Server is listening on port ${port}</p>
+        </body>
+        </html>
+    `;
+    http.get(`http://localhost:${port}`, (response) => {
+        let data = '';
+        response.on('data', (chunk) => {
+            data += chunk;
+        });
+        response.on('end', () => {
+            console.log(data);
+        });
+    }).on('error', (error) => {
+        console.error(`Error accessing localhost: ${error.message}`);
+    });
 });
 
