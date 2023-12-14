@@ -1,1 +1,52 @@
-[]
+[    {
+  "InfoData": {
+    "numberDDT": 23,
+    "date": "2023-12-14T23:00:00.000Z"
+  },
+  "SpeditoreData": {
+    "nome": "asd",
+    "indirizzo": "ghkjl",
+    "citta": "glj",
+    "cap": "jlhgl",
+    "telefono": "5795",
+    "email": "fg@gjklh",
+    "codiceFiscale": "454"
+  },
+  "DestinatarioData": {
+    "nome": "gfmbv",
+    "indirizzo": "bfkghf",
+    "citta": "vjhvmm",
+    "cap": "gchjmv",
+    "telefono": "8598",
+    "email": "fg@gjklh",
+    "codiceFiscale": "78560"
+  },
+  "OrigineData": {
+    "nome": "mnvm",
+    "indirizzo": "bfjkgfv",
+    "citta": "ghdjcc ",
+    "cap": "jhgcjm",
+    "telefono": "7656",
+    "email": "fg@gjklh",
+    "codiceFiscale": "67597"
+  },
+  "DestinazioneData": {
+    "nome": "nmbcbvmjnh",
+    "indirizzo": "jhvc",
+    "citta": "jcj",
+    "telefono": "7679",
+    "email": "fg@gjklh",
+    "codiceFiscale": "mbcv"
+  },
+  "IdentificazionData": {
+    "tipoAnimale": ",gljh",
+    "nomi": "hjgljhg",
+    "pesoInKg": 8787
+  },
+  "PrezzoData": {
+    "PrezzoDelServizio": 87689,
+    "ModalitaDiPagamento": "acconto",
+    "DataDellAcconto": "2023-12-09T23:00:00.000Z"
+  }
+}
+]]
