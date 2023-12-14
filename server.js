@@ -55,7 +55,21 @@ const server = http.createServer((req, res) => {
     } else if (req.method === 'GET' && req.url === '/') {
         res.writeHead(200, { 'Content-Type': 'text/html' });
         res.end('<h1>Server is running successfully!</h1>');
-    } else {
+    }
+else if (req.method === 'DELETE' && req.url === '/deleteData') {
+    // Удаление всех данных
+    fs.writeFile('data.json', '[]', 'utf8', (err) => {
+        if (err) {
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ error: 'Internal Server Error' }));
+            return;
+        }
+
+        res.writeHead(200, { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' });
+        res.end(JSON.stringify({ message: 'All data deleted successfully' }));
+    });
+}
+    else {
         res.writeHead(404, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ error: 'Not Found' }));
     }
